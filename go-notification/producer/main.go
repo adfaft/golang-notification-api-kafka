@@ -52,8 +52,10 @@ func sendKafkaMessage(producer sarama.SyncProducer, message *formMessage) error 
 
 	messageJson, _ := json.Marshal(message)
 
+	topicName := fmt.Sprintf("%s-%s", ProducerTopic, message.ToUser)
+
 	msg := sarama.ProducerMessage{
-		Topic: ProducerTopic,
+		Topic: topicName,
 		Key:   sarama.StringEncoder(message.ToUser),
 		Value: sarama.StringEncoder(messageJson),
 	}

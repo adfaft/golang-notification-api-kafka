@@ -37,3 +37,4 @@ $ docker run -p 9092:9092 apache/kafka-native:4.1.0
 ## Consumer
 - consume event, `bin/kafka-console-consumer.sh --topic mysample-topic --bootstrap-server localhost:9092`
 - consume event from the beginning, `bin/kafka-console-consumer.sh --topic mysample-topic --from-beginning --bootstrap-server localhost:9092`
+- list current consumer group, `bin/kafka-consumer-groups.sh --bootstrap-server localhost:9092 --list`

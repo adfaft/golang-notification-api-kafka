@@ -11,6 +11,10 @@ Flow
 - B request new notification to Consumer API
 - Consumer API will consume message from Kafka and return the notification
 
+Note
+- seharusnya topic per user, sehingga ketika di consume langsung dikembalikan dan dihapus
+- di consumer API, tetap dibutuhkan storage penampung (saat ini array) dari semnua yang diconsume. Karena API tidak dipanggil realtime, akan dipanggil ketika dibutuhkan.
+
 
 ## How to Run
 - Start Kafka
@@ -45,8 +49,10 @@ curl -X POST http://localhost:8001/api/message -d "fromUser=fauzi&toUser=adfaft&
 # check the message has been received
 bin/kafka-console-consumer.sh --topic mysample-topic --from-beginning --bootstrap-server localhost:9092
 
-# retrieve the messsage by B
+# retrieve the messsage by B. Jalankan berkali kali, karena goroutine sedang dalam proses manampung datanya
 curl -x GET http://localhost:8002/api/message/adfaft
 ```
 
+# NOTE
+- 
 

@@ -43,7 +43,7 @@ producer
 curl -X POST http://localhost:8001/api/message -d "fromUser=fauzi&toUser=adfaft&message=testing for notification"
 
 # retrieve the messsage by B
-curl -x GET http://localhost:8002/api/message/{name}
+curl -x GET http://localhost:8002/api/message/adfaft
 ```
 
 

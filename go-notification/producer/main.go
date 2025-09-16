@@ -19,9 +19,9 @@ dan push ke kafka
 **/
 
 const (
-	ProducerPort = ":8001"
-	KafkaServer  = "localhost:9092"
-	KafkaTopic   = "notification"
+	KafkaServer   = "localhost:9092"
+	ProducerPort  = ":8001"
+	ProducerTopic = "notification"
 )
 
 type responseMessage struct {
@@ -53,7 +53,7 @@ func sendKafkaMessage(producer sarama.SyncProducer, message *formMessage) error 
 	messageJson, _ := json.Marshal(message)
 
 	msg := sarama.ProducerMessage{
-		Topic: KafkaTopic,
+		Topic: ProducerTopic,
 		Key:   sarama.StringEncoder(message.ToUser),
 		Value: sarama.StringEncoder(messageJson),
 	}

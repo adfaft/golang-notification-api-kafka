@@ -30,6 +30,11 @@ Documentation
 Docker
 - https://github.com/apache/kafka/blob/trunk/docker/examples/README.md
 
+GO Sarama for Kafka
+- sarama : https://github.com/IBM/sarama?tab=readme-ov-file
+- producer : https://pkg.go.dev/github.com/IBM/sarama#example-SyncProducer
+- consumer :  https://pkg.go.dev/github.com/IBM/sarama#example-ConsumerGroup
+
 Tutorial
 - https://kafka.apache.org/41/documentation/streams/quickstart
 - https://www.freecodecamp.org/news/build-a-real-time-notification-system-with-go-and-kafka/

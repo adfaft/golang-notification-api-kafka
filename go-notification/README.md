@@ -42,6 +42,9 @@ producer
 # send the messsage from A
 curl -X POST http://localhost:8001/api/message -d "fromUser=fauzi&toUser=adfaft&message=testing for notification"
 
+# check the message has been received
+bin/kafka-console-consumer.sh --topic mysample-topic --from-beginning --bootstrap-server localhost:9092
+
 # retrieve the messsage by B
 curl -x GET http://localhost:8002/api/message/adfaft
 ```

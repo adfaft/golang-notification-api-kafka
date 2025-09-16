@@ -32,4 +32,5 @@ go mod tidy
 go run .
 ```
 
-- adfas
+- create gin request to receive :name from URL (check commit)
+- create sarama consumergroup and its handler (check commit)
